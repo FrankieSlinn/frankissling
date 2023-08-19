@@ -6,5 +6,8 @@ module.exports = {
   },
   plugins: [],
   darkMode: "class",
+  fontFamily: {
+    'handjet': ['Handjet']
+  },
 };
 
