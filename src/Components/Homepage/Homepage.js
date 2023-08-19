@@ -9,16 +9,22 @@ export default function Homepage() {
 
   //cursor animation
   const [cursorVisible, setCursorVisible] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCursorVisible(prevVisible => !prevVisible);
-    }, 950);
-
+    }, 900);
+  
+    const hideTimer = setTimeout(() => {
+      setCursorVisible(false);
+      clearInterval(interval); // Clear the animation interval
+    }, 4500);
+  
     return () => {
       clearInterval(interval);
+      clearTimeout(hideTimer);
     };
   }, []);
-
   const cursorStyle = {
     display: cursorVisible ? 'inline-block' : 'none'
   };
