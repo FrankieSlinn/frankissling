@@ -1,16 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Lobster&family=Londrina+Shadow&family=Moon+Dance&family=Rubik:wght@500;600;700&family=Sono&family=Source+Code+Pro&display=swap');
+
+body {
+  margin: 0;
+
+}
+  html {
+    font-family: Handjet, cursive;
+
+  }
+  @tailwind base;
+  @layer base {
+    html {
+      font-family: Handjet, cursive;
+      @apply text-stone-600;
+
+    } 
+  }
+
+  @keyframes cursorAnimation {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
