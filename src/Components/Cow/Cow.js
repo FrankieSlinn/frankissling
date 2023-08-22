@@ -9,7 +9,7 @@ export default function Cow(){
     // Show the cow after a delay
     setTimeout(() => {
       setShowCow(true);
-    }, 8000); // Adjust the delay as needed
+    }, 9000); // Adjust the delay as needed
   }, []);
  
     

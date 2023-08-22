@@ -14,7 +14,7 @@ export default function Homepage() {
 
     return setIntroVisible(true);
 
-  }, 4000);
+  }, 2000);
 
   const handleTypingComplete = () => {
     console.log("handle typing running")
@@ -30,16 +30,17 @@ export default function Homepage() {
     <div>
     <div className=" h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${island})` }}>
       <p id="intro" className=" tracking-widest font-handjet font-bold absolute top-36 text-4xl text-left leading-[3.5rem]" >
-        <Typewriter
+       
+       { introVisible && <Typewriter
         style={{display: "none"}}      
           words={["Hello. I'm Franziska. I love to code."]}
-          cursor
+            cursor 
           onLoopDone={handleTypingComplete}
           cursorStyle={cursorVisible ? '|' : ' '}
           typeSpeed={150}
-          delaySpeed={8000}
+  
           
-        />
+        /> }
       </p>
     </div>
     <Footer />
