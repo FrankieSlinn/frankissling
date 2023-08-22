@@ -8,25 +8,37 @@ const island = require('../../images/island.jpg');
 export default function Homepage() {
   const [cursorVisible, setCursorVisible] = useState(true);
   const [typingComplete, setTypingComplete] = useState(false);
+  const [introVisible, setIntroVisible] = useState(false);
+
+  setTimeout(() => {
+
+    return setIntroVisible(true);
+
+  }, 4000);
 
   const handleTypingComplete = () => {
+    console.log("handle typing running")
     setTypingComplete(true);
     setTimeout(() => {
-      setCursorVisible(false);
+      console.log("cursor not visible")
+      return setCursorVisible(false);
 
-    }, 9000);
+    }, 2000);
   };
 
   return (
     <div>
-    <div className="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${island})` }}>
-      <p id="intro" className="tracking-widest font-handjet font-bold absolute top-36 text-4xl text-left leading-[3.5rem]">
+    <div className=" h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${island})` }}>
+      <p id="intro" className=" tracking-widest font-handjet font-bold absolute top-36 text-4xl text-left leading-[3.5rem]" >
         <Typewriter
+        style={{display: "none"}}      
           words={["Hello. I'm Franziska. I love to code."]}
           cursor
+          onLoopDone={handleTypingComplete}
           cursorStyle={cursorVisible ? '|' : ' '}
           typeSpeed={150}
-          onLoopDone={handleTypingComplete}
+          delaySpeed={8000}
+          
         />
       </p>
     </div>
