@@ -3,6 +3,8 @@ import cow from '../../images/Cow.png';
 import chicken from '../../images/Chicken.png';
 import whale from '../../images/Whale.png';
 import trex from '../../images/TRex.png'; 
+import sheep from '../../images/Sheep.png'; 
+
 
 
 export default function Cow(){
@@ -10,6 +12,7 @@ export default function Cow(){
     const [showChicken, setShowChicken] = useState(false);
     const [showWhale, setShowWhale] = useState(false);
     const [showTrex, setShowTrex] = useState(false);
+    const [showSheep, setShowSheep] = useState(false);
     
   useEffect(() => {
     // Show the cow after typed text
@@ -20,11 +23,14 @@ export default function Cow(){
       setShowChicken(true);
     }, 14000); 
     setTimeout(() => {
-      setShowWhale(true);
+      setShowSheep(true);
     }, 17000); 
     setTimeout(() => {
-      setShowTrex(true);
+      setShowWhale(true);
     }, 20000); 
+    setTimeout(() => {
+      setShowTrex(true);
+    }, 23000); 
   }, []);
  
     
@@ -49,12 +55,21 @@ export default function Cow(){
       </div> }
       </div>
       <div>
+      { showSheep && <div
+      // Get cow to move down the screen
+  className={'animate-slideDown absolute bottom-0 text-center font-bold text-lg tracking-widest'}
+      >
+        <img className="h-20 w-20" src={sheep} alt="Sheep" />
+        <span>Skills</span>
+      </div> }
+      </div>
+      <div>
       { showWhale && <div
       // Get cow to move down the screen
   className={'animate-slideDown absolute bottom-0 text-center font-bold text-lg tracking-widest'}
       >
         <img className="h-20 w-20" src={whale} alt="Whale" />
-        <span>Skills</span>
+        <span>Education</span>
       </div> }
       </div>
       <div>
@@ -63,7 +78,7 @@ export default function Cow(){
   className={'animate-slideDown absolute bottom-0 text-center font-bold text-lg tracking-widest'}
       >
         <img className="h-20 w-20" src={trex} alt="TT-Rex" />
-        <span>Education</span>
+        <span>Likes</span>
       </div> }
       </div>
       </div>   
